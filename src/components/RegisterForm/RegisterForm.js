@@ -11,7 +11,10 @@ const initialState = { userName: "", status: "", agreement: true };
 const RegisterForm = () => {
     const [state, setstate] = useState(initialState);
     const context = useContext(Context);
-    const { dispatch } = context;
+    const {
+        dispatch,
+        state: { darkTheme },
+    } = context;
 
     const handleInputChange = ({ target: { value, name } }) => {
         setstate((prevState) => {
@@ -37,7 +40,7 @@ const RegisterForm = () => {
     };
 
     return (
-        <StyledRegisterContainer>
+        <StyledRegisterContainer darkTheme={darkTheme}>
             <h2>Here you can register</h2>
             <Form onSubmit={handleRegistrUser}>
                 <Form.Group controlId="formBasicUser">
@@ -72,7 +75,7 @@ const RegisterForm = () => {
                         label="Comfirm agruiment"
                     />
                 </Form.Group>
-                <Button variant="primary" type="submit">
+                <Button variant={darkTheme ? "light" : "primary"} type="submit">
                     Submit
                 </Button>
             </Form>

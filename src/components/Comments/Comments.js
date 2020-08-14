@@ -8,11 +8,11 @@ import { Context } from "../AppContextProvider";
 
 const Comments = () => {
     const {
-        state: { selectedUser },
+        state: { selectedUser, darkTheme },
     } = useContext(Context);
 
     return (
-        <StyledCommentsContainer>
+        <StyledCommentsContainer darkTheme={darkTheme}>
             <h2>Feedbacks</h2>
             <ul>
                 {selectedUser.comments.length ? (

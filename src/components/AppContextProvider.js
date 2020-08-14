@@ -1,4 +1,6 @@
-import React, { useReducer } from "react";
+import React, { useReducer, useEffect } from "react";
+
+import useLocalStorage from "../hooks/useLocalStorage";
 
 const initialState = {
     users: [],
@@ -38,7 +40,15 @@ const reducer = (state = initialState, { type, payload }) => {
 export const Context = React.createContext(initialState);
 
 const AppContextProvider = ({ children }) => {
-    const [state, dispatch] = useReducer(reducer, initialState);
+    const [stateToSave, setStateToSave] = useLocalStorage(
+        "state",
+        initialState
+    );
+    const [state, dispatch] = useReducer(reducer, stateToSave);
+
+    useEffect(() => {
+        setStateToSave(state);
+    }, [state, setStateToSave]);
 
     return (
         <Context.Provider value={{ state, dispatch }}>
