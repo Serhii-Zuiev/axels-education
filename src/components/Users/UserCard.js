@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import PropTypes from "prop-types";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import Badge from "react-bootstrap/Badge";
@@ -52,3 +53,10 @@ const UserCard = ({ name, status, feed, id }) => {
 };
 
 export default UserCard;
+
+UserCard.propTypes = {
+    name: PropTypes.string,
+    status: PropTypes.string,
+    feed: PropTypes.number,
+    id: PropTypes.string,
+};

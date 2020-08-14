@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import PropTypes from "prop-types";
 import Card from "react-bootstrap/Card";
 
 import { Context } from "../AppContextProvider";
@@ -23,3 +24,7 @@ const CommentCard = ({ feed }) => {
 };
 
 export default CommentCard;
+
+CommentCard.propTypes = {
+    feed: PropTypes.string,
+};

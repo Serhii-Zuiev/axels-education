@@ -1,4 +1,5 @@
 import React, { useState, useContext, useRef, useEffect } from "react";
+import PropTypes from "prop-types";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 
@@ -57,3 +58,7 @@ const FeedForm = ({ userId }) => {
 };
 
 export default FeedForm;
+
+FeedForm.propTypes = {
+    userId: PropTypes.string,
+};
