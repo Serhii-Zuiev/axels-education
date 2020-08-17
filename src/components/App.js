@@ -2,10 +2,10 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import {
-    addItem,
-    deleteItem,
-    toggleItem,
-    filterItems,
+    requestFetchItem,
+    requestPostItem,
+    requestPatchItem,
+    requestDeleteItem,
 } from "../redux/itemsReducer";
 import {
     startLoading,
@@ -28,38 +28,20 @@ const App = () => {
 
     return (
         <>
-            <button
-                onClick={() =>
-                    dispatch(
-                        addItem({
-                            name: "ITEM#1!",
-                            id: "123",
-                            isToggled: false,
-                        })
-                    )
-                }
-                style={style}
-            >
-                addItem
+            <button onClick={() => dispatch(requestFetchItem())} style={style}>
+            requestFetchItem
             </button>
 
-            <button
-                onClick={() => dispatch(deleteItem({ id: "123" }))}
-                style={style}
-            >
-                deleteItem
+            <button onClick={() => dispatch(requestPostItem(style))} style={style}>
+            requestPostItem
+            </button>
+            <button onClick={() => dispatch()} style={style}>
+                
+            </button>
+            <button onClick={() => dispatch()} style={style}>
+                
             </button>
 
-            <button
-                onClick={() => dispatch(toggleItem({ id: "123" }))}
-                style={style}
-            >
-                toggleItem
-            </button>
-
-            <button onClick={() => dispatch(filterItems("ALL"))} style={style}>
-                filterItems
-            </button>
 
             <hr />
             {isLoading && <h1 style={{ color: "green" }}>LOADING!!!</h1>}

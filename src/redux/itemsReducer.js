@@ -1,9 +1,24 @@
 import { createReducer, createAction } from "@reduxjs/toolkit";
+import axios from "axios";
+import { takeEvery, put, call } from "redux-saga/effects";
 
-export const addItem = createAction("ADD_ITEM");
-export const deleteItem = createAction("DELETE_ITEM");
-export const toggleItem = createAction("TOGGLE_ITEM");
-export const filterItems = createAction("FILTER_ITEM");
+import { startLoading, stopLoading } from "./globalReducer";
+
+export const requestFetchItem = createAction("REQ_FETCH_ITEMS");
+export const succesFetchItem = createAction("OK_FETCH_ITEMS");
+export const errorFetchItem = createAction("ERR_FETCH_ITEMS");
+
+export const requestPostItem = createAction("REQ_POST_ITEMS");
+export const succesPostItem = createAction("OK_POST_ITEMS");
+export const errorPostItem = createAction("ERR_POST_ITEMS");
+
+export const requestPatchItem = createAction("REQ_PATCH_ITEMS");
+export const succesPatchItem = createAction("OK_PATCH_ITEMS");
+export const errorPatchItem = createAction("ERR_PATCH_ITEMS");
+
+export const requestDeleteItem = createAction("REQ_DELETE_ITEMS");
+export const succesDeleteItem = createAction("OK_DELETE_ITEMS");
+export const errorDeleteItem = createAction("ERR_DELETE_ITEMS");
 
 const innitialState = {
     items: [],
@@ -11,19 +26,76 @@ const innitialState = {
 };
 
 const itemsReducer = createReducer(innitialState, {
-    [addItem]: (state, { payload }) => {
+    [succesFetchItem]: (state, { payload }) => {
+        state.items = payload;
+    },
+    [succesPostItem]: (state, { payload }) => {
         state.items.push(payload);
-    },
-    [deleteItem]: (state, { payload }) => {
-        state.items = state.items.filter((item) => item.id !== payload.id);
-    },
-    [toggleItem]: (state, { payload }) => {
-        const item = state.items.find((item) => item.id === payload.id);
-        item.isToggled = !item.isToggled;
-    },
-    [filterItems]: (state, { payload }) => {
-        state.filter = payload;
     },
 });
 
 export default itemsReducer;
+
+
+
+
+
+
+// SAGA
+const BASE_URL = "https://jsonplaceholder.typicode.com/posts";
+
+// GET POST PATCH DELETE
+
+export function* sagaWatcher() {
+    yield takeEvery(requestFetchItem, itemsSagaWorker);
+    yield takeEvery(requestPostItem, itemPostSagaWorker);
+}
+
+function* itemsSagaWorker() {
+    try {
+        yield put(startLoading());
+        const data = yield call(fetchItems);
+        yield put(succesFetchItem(data));
+        yield put(stopLoading());
+    } catch (err) {
+        console.warn(err);
+        yield put(errorFetchItem(err));
+        yield put(stopLoading());
+    }
+}
+async function fetchItems() {
+    const response = await axios({
+        url: BASE_URL,
+        method: "get",
+        headers: {
+            "content-type": "application/json",
+        },
+    });
+    return response.data;
+}
+
+
+function* itemPostSagaWorker({ payload }) {
+    try {
+        yield put(startLoading());
+        const data = yield call(postItem, payload);
+        yield put(succesPostItem(data));
+        yield put(stopLoading());
+    } catch (err) {
+        console.warn(err);
+        yield put(errorPostItem(err));
+        yield put(stopLoading());
+    }
+}
+async function postItem(item) {
+    const response = await axios({
+        url: BASE_URL,
+        method: "post",
+        headers: {
+            "content-type": "application/json",
+        },
+        data: item,
+    });
+    return response.data;
+}
+
