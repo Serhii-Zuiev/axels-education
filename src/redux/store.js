@@ -3,7 +3,7 @@ import createSagaMiddleware from "redux-saga";
 
 import { default as itemsReducer, sagaWatcher } from "./itemsReducer";
 import globalReducer from "./globalReducer";
-import { logger, crashReporter } from "./middlewares";
+import { logger } from "./middlewares";
 
 const saga = createSagaMiddleware();
 
@@ -12,7 +12,7 @@ export const store = configureStore({
         itemsReducer,
         globalReducer,
     },
-    middleware: [saga, logger, crashReporter],
+    middleware: [saga, logger],
 });
 
 saga.run(sagaWatcher);

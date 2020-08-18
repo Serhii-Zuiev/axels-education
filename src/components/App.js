@@ -29,19 +29,31 @@ const App = () => {
     return (
         <>
             <button onClick={() => dispatch(requestFetchItem())} style={style}>
-            requestFetchItem
+                requestFetchItem
             </button>
 
-            <button onClick={() => dispatch(requestPostItem(style))} style={style}>
-            requestPostItem
-            </button>
-            <button onClick={() => dispatch()} style={style}>
-                
-            </button>
-            <button onClick={() => dispatch()} style={style}>
-                
+            <button
+                onClick={() => dispatch(requestPostItem(style))}
+                style={style}
+            >
+                requestPostItem
             </button>
 
+            <button
+                onClick={() =>
+                    dispatch(requestPatchItem({ item: style, id: 5 }))
+                }
+                style={style}
+            >
+                requestPatchItem
+            </button>
+
+            <button
+                onClick={() => dispatch(requestDeleteItem(3))}
+                style={style}
+            >
+                requestDeleteItem
+            </button>
 
             <hr />
             {isLoading && <h1 style={{ color: "green" }}>LOADING!!!</h1>}
