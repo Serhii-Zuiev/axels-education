@@ -45,7 +45,7 @@ const UserCard = ({ name, status, feed, id }) => {
                     onClick={handleSelectUser}
                     variant={darkTheme ? "outline-light" : "outline-primary"}
                 >
-                    Leave feedback on {name}
+                    Leave feedback
                 </Button>
             </Card.Body>
         </Card>

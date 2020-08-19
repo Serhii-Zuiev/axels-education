@@ -3,12 +3,8 @@ import { createGlobalStyle } from "styled-components";
 
 export const StyledAppContainer = styled.div`
     background-color: ${(props) => (props.darkTheme ? "#092532" : "#c9f1ff")};
-    min-height: 100vh;
+    min-height: calc(100vh - 70px);
     transition: all 0.3s ease-in-out;
-    .main {
-        min-height: calc(100vh - 70px);
-        display: flex;
-    }
 `;
 
 export const GlobalStyles = createGlobalStyle`

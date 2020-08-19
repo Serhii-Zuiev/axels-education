@@ -24,13 +24,13 @@ const Header = () => {
     };
 
     return (
-        <Container fluid="true">
-            <Navbar
-                expand="lg"
-                variant={darkTheme ? "dark" : "light"}
-                bg={darkTheme ? "dark" : "light"}
-                style={headerStyles}
-            >
+        <Navbar
+            expand="lg"
+            variant={darkTheme ? "dark" : "light"}
+            bg={darkTheme ? "dark" : "light"}
+            style={headerStyles}
+        >
+            <Container>
                 <Navbar.Brand href="#">Lorem ipsum</Navbar.Brand>
                 <Form.Check
                     type="switch"
@@ -43,8 +43,8 @@ const Header = () => {
                         cursor: "pointer",
                     }}
                 />
-            </Navbar>
-        </Container>
+            </Container>
+        </Navbar>
     );
 };
 
