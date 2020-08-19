@@ -10,7 +10,7 @@ const List = () => {
             .onItem()
             .subscribe((item) =>
                 item
-                    ? setstate((prevState) => [...prevState, item.item])
+                    ? setstate((prevState) => [...prevState, item])
                     : setstate([])
             );
 
