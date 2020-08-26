@@ -1,0 +1,92 @@
+[
+    {
+        "question": "at blanditiis voluptate porro vel?",
+        "id": "1",
+        "A": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
+        "B": "t quas totam nostrum rerum est autem sunt rem eveniet architecto",
+        "C": "quia et suscas totam nostrum rerum est autem sunt rem eveniet architecto",
+        "answer": "",
+        "correct": "C"
+    },
+    {
+        "question": "totam nostrum rerum?",
+        "id": "2",
+        "A": "qui est esseui apsimus qui neque nisi nului apsimus qui neque nisi nul",
+        "B": "ae ea dolores neque fugiat blanditiis voluptate porro vel us qui neque nisi nulla",
+        "C": "est rerum tempore vitae sequi sint nihirro vel nihil molestiae ut reiciendis qla",
+        "answer": "",
+        "correct": "B"
+    },
+    {
+        "question": "ae sequi sint nihirro vel ni?",
+        "id": "3",
+        "A": "ea molestias quasi exercitationem repellat qui ipsa sit aut",
+        "B": "et iusto sed quo iure voluptatem occaecati omnis eligendi aut porro eius odielit aut",
+        "C": "et iusto sed quo iuium quis pariatur molestiae porro eius odio et labore et velit aut",
+        "answer": "",
+        "correct": "A"
+    },
+    {
+        "question": "catiem tenetur doloremque ipe?",
+        "id": "4",
+        "A": "eum et est occaecatiem tenetur doloremque ipem tenetur doloremque ip",
+        "B": "ullam et saepe rem tenetur doloremque ipsam iure quis sunt voluptatem rerum illo velit",
+        "C": "ulla nesciunt rem tenetur doloremque ipsam iure quis sunt voluptatem rerum illo velit",
+        "answer": "",
+        "correct": "C"
+    },
+    {
+        "question": "m tenetur doloremque ipsam iu?",
+        "id": "5",
+        "A": "nesciunt quas odiotem sed est voluptatem omnis possimtem sed est voluptatem omnis possim",
+        "B": "as aut fugiat sit autem sed est voluptatem omnis possimus esse voluptatibus quis est aut tenetur dolor neque",
+        "C": "repudiandae veniam quaerat sunt sed alias auoluptatibus quis est aut tenetur dolor neque",
+        "answer": "",
+        "correct": "B"
+    },
+    {
+        "question": "eniam quaerat sunt sed alias auolu?",
+        "id": "6",
+        "A": "dolorem eum magni eos aperiam quiaenderit accusantenderit accusantenderit accusant",
+        "B": "ut aspernatur corporinemo ab reprehenderit accusantium quas voluptate dolores velit et doloremque molestiae",
+        "C": "ut aspernatemo ab reprehenderit accusantium quas voluptate dolores velit et doloremque molestiae",
+        "answer": "",
+        "correct": "A"
+    },
+    {
+        "question": "derit accusantium quas voluptate dolore?",
+        "id": "7",
+        "A": "magnam facilis autemsequi eos ea sed quassequi eos ea sed quas",
+        "B": "dolore placeat quibust excepturi ut quia sunt ut sequi eos ea sed quas",
+        "C": " saepe quidem repellat excepturi ut quia sunt ut sequi eos ea sed quas",
+        "answer": "",
+        "correct": "C"
+    },
+    {
+        "question": "am aut noprovident voluptas autem?",
+        "id": "8",
+        "A": "dolorem doles excepturi ipsaes excepturi ipsaore est ipsam",
+        "B": "dignissimos aperiam dolorem maiores excepturi ipsam ut commodi dolor voluptatum modi aut vitae",
+        "C": "dignissimoiores excepturi ipsam ut commodi dolor voluptatum modi aut vitae",
+        "answer": "",
+        "correct": "B"
+    },
+    {
+        "question": "iam dolorem maiores excepturi ipsam u?",
+        "id": "9",
+        "A": "nesciunt iure omnis dolorem tempora et accusantium ut quam aut no",
+        "B": "est aut quod aut ut quam aut noprovident voluptas autem voluptas",
+        "C": "consectetur animi ad veniam autem ut quam aut nobis et est aut quod aut providvoluptas",
+        "answer": "",
+        "correct": "B"
+    },
+    {
+        "question": "aut quod aut ut quam aut noprovident volupta?",
+        "id": "10",
+        "A": "optio molestias id quia eum vero nisi sit quos veniam",
+        "B": "quo et expedita moro nisi sit quos veniam quod sed accusamus veritatis error",
+        "C": "qui repudiandae vero nisi sit quos veniam quod sed accusamus veritatis error",
+        "answer": "",
+        "correct": "A"
+    }
+]
