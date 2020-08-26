@@ -1,20 +1,15 @@
-import React, { useContext } from "react";
+import React from "react";
 
-import { HomePage, Header, QuizSection } from "./components";
+import { Header, Routing } from "./components";
 import { GlobalStyles, StyledAppContainer } from "./styles";
-import { Context } from "./components/AppContextProvider";
 
 function App() {
-    const {
-        state: { isQuizStarted },
-    } = useContext(Context);
-
     return (
         <>
             <GlobalStyles />
             <Header />
             <StyledAppContainer>
-                {isQuizStarted ? <QuizSection /> : <HomePage />}
+                <Routing />
             </StyledAppContainer>
         </>
     );

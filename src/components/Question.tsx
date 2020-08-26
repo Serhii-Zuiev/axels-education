@@ -9,6 +9,7 @@ type props = {
     currentQuestion: questionType;
 };
 
+
 const Question = ({ answer, currentQuestion }: props) => {
 
     return (

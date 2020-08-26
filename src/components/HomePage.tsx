@@ -1,9 +1,10 @@
 import React, { useContext } from "react";
 import Button from "@material-ui/core/Button";
+import {RouteComponentProps} from "react-router-dom";
 
 import { Context } from "./AppContextProvider";
 
-const HomePage = () => {
+const HomePage = ({history}:RouteComponentProps) => {
     const {
         dispatch,
         state: { questions },
@@ -12,6 +13,7 @@ const HomePage = () => {
     const onToggleQuize = (): void => {
         dispatch({ type: "TOGGLE_QUIZ" });
         dispatch({ type: "SELECT_QUESTION", payload: questions[0].id });
+        history.push('/quiz/1')
     };
 
     return (

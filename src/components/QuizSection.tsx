@@ -1,11 +1,15 @@
 import React, { useContext, useState } from "react";
 import Button from "@material-ui/core/Button";
 import ButtonGroup from "@material-ui/core/ButtonGroup";
+import { RouteComponentProps } from "react-router-dom";
 
 import Question from "./Question";
 import { Context, questionType } from "./AppContextProvider";
 
-const QuizSection = () => {
+const QuizSection = ({
+    match,
+    history,
+}: RouteComponentProps<{ id: string }>) => {
     const [currentAnswer, setCurrentAnswer] = useState<string>("");
     const {
         dispatch,
@@ -17,6 +21,8 @@ const QuizSection = () => {
         return questions.find((q: questionType) => q.id === currentQuestionID);
     };
 
+    console.log("match.params.id :>> ", match.params.id);
+
     const onAnswerSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
         e.preventDefault();
         if (currentAnswer) {
@@ -25,26 +31,28 @@ const QuizSection = () => {
                     type: "LEAVE_ANSWER",
                     payload: { id: currentQuestionID, answer: currentAnswer },
                 });
-                const nextQuestionIndex = questions.indexOf(getCurrentQuestion()) + 1;
+                const nextQuestionIndex =
+                    questions.indexOf(getCurrentQuestion()) + 1;
                 const nextQuestionID = questions[nextQuestionIndex].id;
                 dispatch({ type: "SELECT_QUESTION", payload: nextQuestionID });
+                history.push(nextQuestionID);
             } else {
                 dispatch({
                     type: "LEAVE_ANSWER",
                     payload: { id: currentQuestionID, answer: currentAnswer },
                 });
                 dispatch({ type: "TOGGLE_QUIZ" });
-                const getSpec = ():string => {
-                    const correct = questions.filter((q:questionType)=> q.correct === q.answer)
-                    return `${correct.length}/10`
-                }
-                console.log('getSpec() :>> ', getSpec());
+                const getSpec = (): string => {
+                    const correct = questions.filter(
+                        (q: questionType) => q.correct === q.answer
+                    );
+                    return `${correct.length}/10`;
+                };
+                console.log("getSpec() :>> ", getSpec());
             }
         }
         setCurrentAnswer("");
     };
-
-
 
     return (
         <>
