@@ -25,7 +25,7 @@ const Header = () => {
                     {isQuizStarted && (
                         <div>
                             <span>{currentQuestionID}/10</span>
-                            <Button onClick={onStartQuiz} color="inherit">
+                            <Button onClick={onStartQuiz} color="inherit" data-testid="drop-quiz-btn">
                                 Drop the quiz
                             </Button>
                         </div>

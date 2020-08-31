@@ -16,19 +16,19 @@ const Question = ({ answer, currentQuestion }: props) => {
         <StyledQuestionsContainer>
             <h2>{currentQuestion.question}</h2>
 
-            <Paper elevation={answer === "A" ? 10 : 1} className="questionCard">
+            <Paper elevation={answer === "A" ? 10 : 1} className="questionCard" role='listitem'>
                 <div>
                     <span>A:</span>
                     <p>{currentQuestion.A}</p>
                 </div>
             </Paper>
-            <Paper elevation={answer === "B" ? 10 : 1} className="questionCard">
+            <Paper elevation={answer === "B" ? 10 : 1} className="questionCard" role='listitem'>
                 <div>
                     <span>B:</span>
                     <p>{currentQuestion.B}</p>
                 </div>
             </Paper>
-            <Paper elevation={answer === "C" ? 10 : 1} className="questionCard">
+            <Paper elevation={answer === "C" ? 10 : 1} className="questionCard" role='listitem'>
                 <div>
                     <span>C:</span>
                     <p>{currentQuestion.C}</p>

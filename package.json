@@ -39,5 +39,18 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "jest": {
+    "clearMocks": true,
+    "transform": {
+      "^.+\\.js$": "babel-jest"
+    }
+  },
+  "devDependencies": {
+    "@babel/plugin-transform-react-jsx": "^7.10.4",
+    "@babel/polyfill": "^7.10.4",
+    "@babel/preset-env": "^7.11.0",
+    "@babel/preset-flow": "^7.10.4",
+    "@babel/preset-react": "^7.10.4"
   }
 }

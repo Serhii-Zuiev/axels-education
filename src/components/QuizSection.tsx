@@ -61,13 +61,13 @@ const QuizSection = ({
                 currentQuestion={getCurrentQuestion()}
             />
             Your answer is:
-            <form onSubmit={onAnswerSubmit}>
+            <form onSubmit={onAnswerSubmit} data-testid="answer-form">
                 <ButtonGroup
                     variant="contained"
                     color="primary"
                     aria-label="contained primary button group"
                 >
-                    <Button onClick={() => setCurrentAnswer("A")}>A</Button>
+                    <Button onClick={() => setCurrentAnswer("A")} data-testid="answer-btn">A</Button>
                     <Button onClick={() => setCurrentAnswer("B")}>B</Button>
                     <Button onClick={() => setCurrentAnswer("C")}>C</Button>
                 </ButtonGroup>

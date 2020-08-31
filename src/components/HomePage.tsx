@@ -26,7 +26,7 @@ const HomePage = ({history}:RouteComponentProps) => {
                 generated right here.
             </p>
 
-            <Button onClick={onToggleQuize} variant="contained" color="primary">
+            <Button onClick={onToggleQuize} variant="contained" color="primary" data-testid="start-quiz-btn">
                 Start quiz
             </Button>
         </>
