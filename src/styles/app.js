@@ -2,7 +2,10 @@ import styled from "styled-components";
 import { createGlobalStyle } from "styled-components";
 
 export const StyledAppContainer = styled.div`
-padding: 40px 60px;
+    min-height: 100vh;
+    min-width: 100vw;
+    padding: 40px 40px;
+    background-color: #eee;
 `;
 
 export const GlobalStyles = createGlobalStyle`
@@ -24,6 +27,20 @@ body {
 
 ul {
   list-style: none;
+}
+
+.userDetailsContainer{
+    display: flex;
+}
+.userDetailsHeading{
+    margin-bottom: 24px
+}
+.userDetailsDetails{
+    margin-right: 60px;
+}
+.userDetailsPhoto{
+    width: 267px;
+    height: 200px;
 }
 
 `;

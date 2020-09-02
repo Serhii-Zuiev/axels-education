@@ -2,13 +2,14 @@ import React from "react";
 import ReactDOM from "react-dom";
 
 import App from "./App";
-import { default as AppContextProvider } from "./components/AppContextProvider";
+import { GlobalStyles, StyledAppContainer } from "./styles/app";
 
 ReactDOM.render(
     <React.StrictMode>
-        <AppContextProvider>
+        <GlobalStyles />
+        <StyledAppContainer>
             <App />
-        </AppContextProvider>
+        </StyledAppContainer>
     </React.StrictMode>,
     document.getElementById("root")
 );
